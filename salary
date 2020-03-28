@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Karen {
+
+	public static void main(String[] args) {
+		int s = 0, shifts = 0, savings = 0;
+		Scanner a = new Scanner(System.in);
+		System.out.println("Salary:");
+		s = a.nextInt();
+		System.out.println("Shifts");
+		shifts =a.nextInt();
+		if(s > 8000)
+		{
+			System.out.println("Salary too large");
+		}
+		else if(shifts < 0) 
+		{
+			System.out.println("Shifts too small");
+		}
+		else if(s < 0) 
+		{
+			System.out.print("Salary too small");
+		} else {
+			savings = calculateSal(s, shifts);
+			System.out.print("Savings of karen :"+savings);
+		}
+	}
+
+	public static int calculateSal(int s, int shifts) {
+		int saving = 0;
+		saving = (int)(s * 0.5 + s * 0.02 * shifts);
+		return saving;
+	}
+}	
